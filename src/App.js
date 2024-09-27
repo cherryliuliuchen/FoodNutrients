@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import SearchResultPage from './pages/SearchResultPage';
+import FoodDetailPage from './pages/FoodDetailPage';
+import AccountPage from './pages/AccountPage';
+import MyFoodPage from './pages/MyFoodPage';
+import MyInformationPage from './pages/MyInformationPage'; 
+import MyNavbar from './components/Navbar';
+import Footer from './components/Footer';
+import './App.css'; 
+
+const isLoggedIn = () => {
+  const token = localStorage.getItem('token');
+  return !!token; // Check if the token is existed
+};
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(isLoggedIn());
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token && !loggedIn) {
+      setLoggedIn(true);
+    } else if (!token && loggedIn) {
+      setLoggedIn(false);
+    }
+  }, [loggedIn]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="d-flex flex-column min-vh-100"> {/*flexbox*/}
+      <MyNavbar loggedIn={loggedIn} /> 
+      <div className="flex-grow-1"> {/* Content */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/search" element={<SearchResultPage />} />
+          <Route path="/food/:fdcId" element={<FoodDetailPage />} />
+          <Route path="/account" element={<AccountPage />} />
+          <Route path="/my-food" element={<MyFoodPage />} /> 
+          <Route path="/my-information" element={<MyInformationPage />} />   
+        </Routes>
+      </div>
+      <Footer />       {/* Footer in the bottom */}
     </div>
   );
 }

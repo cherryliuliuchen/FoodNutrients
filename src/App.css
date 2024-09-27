@@ -1,3 +1,71 @@
+body, h1, h2, h3, h4, h5, h6, p, a, nav, footer {
+  color: #3f302c; 
+  background-color: #fbfaf8; 
+}
+
+button {
+  background-color: #febe98; 
+  border: none; 
+  padding: 10px 20px; 
+  height: 48px; 
+  font-size: 1.25rem; 
+  display: inline-block;
+  border-radius: 8px; 
+}
+
+/* The background color is slightly darker when the button is hovered */
+button:hover {
+  background-color: #fda77b;
+}
+
+.custom-navbar {
+  background-color: #efcfba !important;
+  color: #3f302c !important; 
+}
+
+.custom-navbar .nav-link {
+  color: #3f302c !important;
+}
+
+.custom-navbar .navbar-brand {
+  color: #3f302c !important;
+  background-color: transparent !important; 
+  border: none !important; 
+}
+
+.custom-footer {
+  background-color: #efcfba;
+  color: #3f302c; 
+  padding: 1rem 0; 
+  text-align: center; 
+  width: 100%;
+  border: none; 
+}
+
+.custom-footer p {
+  margin: 0;
+  background-color: #efcfba; 
+  padding: 0; 
+  border: none; 
+}
+
+a {
+  color: #3f302c; 
+  background-color: transparent; 
+  text-decoration: none; /* 
+  Remove default underline */
+}
+
+a:hover {
+  color: #85694a; 
+  background-color: transparent; 
+}
+
+a:active {
+  background-color: transparent; 
+}
+
+
 .App {
   text-align: center;
 }
