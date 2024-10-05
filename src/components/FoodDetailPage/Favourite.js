@@ -53,16 +53,24 @@ const Favourite = ({ fdcId }) => {
     }
   };
 
+  // return (
+  //   <button
+  //     onClick={handleFavouriteClick}
+  //     style={{
+  //       background: 'none',
+  //       border: 'none',
+  //       cursor: 'pointer',
+  //       fontSize: '2rem',
+  //       color: isFavourite ? 'red' : 'gray'
+  //     }}
+  //   >
+  //     ♥
+  //   </button>
+  // );
   return (
     <button
       onClick={handleFavouriteClick}
-      style={{
-        background: 'none',
-        border: 'none',
-        cursor: 'pointer',
-        fontSize: '2rem',
-        color: isFavourite ? 'red' : 'gray'
-      }}
+      className={`btn btn-link fs-1 text-decoration-none ${isFavourite ? 'text-danger' : 'text-secondary'}`}
     >
       ♥
     </button>

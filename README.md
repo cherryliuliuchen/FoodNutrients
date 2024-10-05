@@ -1,4 +1,27 @@
-# Getting Started with Create React App
+# Technical Project Description for tastetime APP
+
+> The food nutrition analysis application  is a web-based tool designed to provide users with detailed nutrition information and advice on healthy eating. The frontend is developed using React, Bootstrap, and JavaScript.
+
+> The application comprises several key modules, each serving a specific purpose for users. These modules include food search, user registration/login and user-selected foodlist. 
+
+## Table of Contents
+- [User-interactive Features](#features)
+- [Getting Started with Create React App](#getting-started-with-create-react-app)
+
+## User-interactive Features
+### Search Food and Nutrients List
+![alt text](./public/assets/search.png)
+![alt text](./public/assets/searchresult.png)
+![alt text](./public/assets/nutrientslist.png)
+
+### Register and Login
+![alt text](./public/assets/register.png)
+![alt text](./public/assets/login.png)
+
+### User-selected Foodlist
+![alt text](./public/assets/myfoodlist.png)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
