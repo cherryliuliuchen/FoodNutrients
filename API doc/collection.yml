@@ -1,0 +1,258 @@
+openapi: 3.0.0
+info:
+  title: Food
+  version: 1.0.0
+servers:
+  - url: https://api.nal.usda.gov
+  - url: http://localhost:5000
+  - url: https://foodapp-cqdcbbc6d8gqambb.germanywestcentral-01.azurewebsites.net
+components:
+  securitySchemes:
+    noauthAuth:
+      type: http
+      scheme: noauth
+paths:
+  /fdc/v1/foods/search:
+    get:
+      tags:
+        - default
+      summary: >-
+        https://api.nal.usda.gov/fdc/v1/foods/search?&query=cheddar&api_key=2Si9Mhg7EhQkRqF72ULhkdtOghdO2h8LbRkVjISr
+      parameters:
+        - name: null
+          in: query
+          schema:
+            type: string
+        - name: query
+          in: query
+          schema:
+            type: string
+          example: matcha
+        - name: api_key
+          in: query
+          schema:
+            type: string
+          example: 2Si9Mhg7EhQkRqF72ULhkdtOghdO2h8LbRkVjISr
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /fdc/v1/food/2344813:
+    get:
+      tags:
+        - default
+      summary: >-
+        https://api.nal.usda.gov/fdc/v1/food/2341142?api_key=2Si9Mhg7EhQkRqF72ULhkdtOghdO2h8LbRkVjISr
+      parameters:
+        - name: api_key
+          in: query
+          schema:
+            type: string
+          example: 2Si9Mhg7EhQkRqF72ULhkdtOghdO2h8LbRkVjISr
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/food/search:
+    get:
+      tags:
+        - default
+      summary: azure query food
+      parameters:
+        - name: query
+          in: query
+          schema:
+            type: string
+          example: |
+            matcha
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/food/167782:
+    get:
+      tags:
+        - default
+      summary: queryfoodbyid
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/user/register:
+    post:
+      tags:
+        - default
+      summary: register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: AdminUser
+                email: admin@example.com
+                password: '123456'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/user/login:
+    post:
+      tags:
+        - default
+      summary: adminlogin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: adminadmin@example.com
+                password: '87654321'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/user/me:
+    get:
+      tags:
+        - default
+      summary: userinformation
+      parameters:
+        - name: x-auth-token
+          in: header
+          schema:
+            type: string
+          example: >-
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZkNWI5MTk2NWFhZDY4OWMyZjAwNjc4In0sImlhdCI6MTcyNTI4MzIzMiwiZXhwIjoxNzI1Mjg2ODMyfQ.qZEJuslINcPAcJxM0Dd5Ph02O6_ORPgGZN5U_aKCNX4
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/myfood/:
+    post:
+      tags:
+        - default
+      summary: addmyfood
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fdcId: '167782'
+                description: Test delete
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: x-auth-token
+          in: header
+          schema:
+            type: string
+          example: >-
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZjOWZhZWY1ZWQ0NDQxNjliNzQ0NjExIiwiaXNBZG1pbiI6ZmFsc2V9LCJpYXQiOjE3MjU0NDA5MzMsImV4cCI6MTcyNTQ0NDUzM30.eL8m5khZt5QT52qE4wTFxaRfs4DcI9ZeizyyjTnXLc4
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - default
+      summary: getmyfood
+      parameters:
+        - name: x-auth-token
+          in: header
+          schema:
+            type: string
+          example: >-
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZjOWZhZWY1ZWQ0NDQxNjliNzQ0NjExIiwiaXNBZG1pbiI6ZmFsc2V9LCJpYXQiOjE3MjU0NDA5MzMsImV4cCI6MTcyNTQ0NDUzM30.eL8m5khZt5QT52qE4wTFxaRfs4DcI9ZeizyyjTnXLc4
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/myfood/66d8274e0e648fb9f5d5d480:
+    delete:
+      tags:
+        - default
+      summary: deletemyfood
+      parameters:
+        - name: x-auth-token
+          in: header
+          schema:
+            type: string
+          example: >-
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZjOWZhZWY1ZWQ0NDQxNjliNzQ0NjExIiwiaXNBZG1pbiI6ZmFsc2V9LCJpYXQiOjE3MjU0NDA5MzMsImV4cCI6MTcyNTQ0NDUzM30.eL8m5khZt5QT52qE4wTFxaRfs4DcI9ZeizyyjTnXLc4
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/user/admin/66d5b91965aad689c2f00678:
+    put:
+      tags:
+        - default
+      summary: adminmodifyuser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Yayaya
+                isActive: true
+      parameters:
+        - name: x-auth-token
+          in: header
+          schema:
+            type: string
+          example: >-
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZkNWRjZTFjYmYyZTE2MjIxMzA4MDg1IiwiaXNBZG1pbiI6dHJ1ZX0sImlhdCI6MTcyNTM1NTMzOSwiZXhwIjoxNzI1MzU4OTM5fQ.Fc-CAxrJ2ZGY9P6W9utlNcAHx5UVkWNvqs33i2TSbJc
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/user/admin:
+    post:
+      tags:
+        - default
+      summary: admincreatenew
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: newUser
+                email: newuser@example.com
+                password: newUserPassword
+                isActive: true
+      parameters:
+        - name: x-auth-token
+          in: header
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/user/validate-token:
+    get:
+      tags:
+        - default
+      summary: http://localhost:5000/api/user/validate-token
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
