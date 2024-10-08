@@ -1,8 +1,0 @@
-{
-    "appService.zipIgnorePattern": [
-        "node_modules{,/**}",
-        ".vscode{,/**}"
-    ],
-    "appService.defaultWebAppToDeploy": "/subscriptions/7866bbb6-48b0-4fb2-96ae-bb425bd607f5/resourceGroups/northeuropeResourceGroup/providers/Microsoft.Web/sites/FoodAdiminUser",
-    "appService.deploySubpath": "."
-}
