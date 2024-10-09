@@ -1,6 +1,6 @@
 {
-  "short_name": "MyApp",
-  "name": "My Awesome React App",
+  "short_name": "MyFood",
+  "name": "My Food Nutrients App",
   "icons": [
     {
       "src": "favicon.ico",
@@ -23,8 +23,10 @@
       "sizes": "1024x1024"
     }
   ],
-  "start_url": "/",
+  "start_url": ".",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "description": "This is a sample React PWA application."

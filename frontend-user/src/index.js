@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-// Import Service Worker 
+// 引入 Service Worker 注册函数
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 const container = document.getElementById('root');
@@ -17,5 +17,5 @@ root.render(
   </Router>
 );
 
-// Service Worker 
+// 注册 Service Worker 以启用离线功能
 serviceWorkerRegistration.register();
