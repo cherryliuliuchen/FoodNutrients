@@ -1,4 +1,4 @@
-# Technical Project Description for tastetime APP
+# Technical Project Description for FoodNutrients APP
 
 > The food nutrition analysis application  is a web-based tool designed to provide users with detailed nutrition information and advice on healthy eating. The frontend is developed using React, Bootstrap, and JavaScript.
 

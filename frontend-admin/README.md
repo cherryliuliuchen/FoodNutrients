@@ -1,4 +1,4 @@
-# Technical Project Description for tastetime APP - admin system
+# Technical Project Description for FoodNutrients APP - admin system
 > The admin system of the food nutrition analysis application is a standalone web-based tool developed using React, Bootstrap, and TypeScript. The separation of the admin system into its own entry point allows for easier scalability and future feature expansion. This modular approach ensures that as new administrative functions are needed, they can be seamlessly integrated without disrupting the core functionality of the user-facing application. Additionally, using TypeScript improves code maintainability, making it easier to identify potential bugs and implement new features. The admin system’s primary functions include creating new users, modifying user email and password, and marking users as inactive.
 
 
